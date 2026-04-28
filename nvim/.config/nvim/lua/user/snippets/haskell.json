@@ -1,0 +1,23 @@
+{
+  "Right Arrow": {
+    "prefix": [
+      "ra"
+    ],
+    "body": "->",
+    "description": "Rignt arrow"
+  },
+  "Left Arrow": {
+    "prefix": [
+      "la"
+    ],
+    "body": "<-",
+    "description": "Left arrow"
+  },
+  "Double Arrow": {
+    "prefix": [
+      "da"
+    ],
+    "body": "=>",
+    "description": "Double arrow"
+  }
+}

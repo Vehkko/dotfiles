@@ -1,0 +1,72 @@
+{
+  "template": {
+    "prefix": [
+      "tee"
+    ],
+    "body": "template <typename ${0}>",
+    "description": "Template with type parameter"
+  },
+  "class": {
+    "prefix": [
+      "cll"
+    ],
+    "body": [
+      "class ${1:ClassName} {",
+      "  private:",
+      "\t${2}",
+      "};"
+    ],
+    "description": "Class with private member"
+  },
+  "struct": {
+    "prefix": [
+      "stt"
+    ],
+    "body": [
+      "struct ${1:StructName} {",
+      "\t${2}",
+      "};"
+    ],
+    "description": "Struct"
+  },
+  "enum": {
+    "prefix": [
+      "enn"
+    ],
+    "body": [
+      "enum ${1:EnumName} {",
+      "\t${2}",
+      "}"
+    ],
+    "description": "Enum"
+  },
+  "for loop": {
+    "prefix": [
+      "foo"
+    ],
+    "body": [
+      "for (${1}) {",
+      "}"
+    ],
+    "description": "For loop"
+  },
+  "if statement": {
+    "prefix": [
+      "iff"
+    ],
+    "body": [
+      "if (${1}) {",
+      "}"
+    ],
+    "description": "If statement"
+  },
+  "std::cout": {
+    "prefix": [
+      "coo"
+    ],
+    "body": [
+      "std::cout << ${0} << std::endl;"
+    ],
+    "description": "Std cout"
+  }
+}
