@@ -1,0 +1,13 @@
+BasedOnStyle: LLVM
+
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+
+# 可以顺便加一点常见偏好（可删）
+PointerAlignment: Left
+ColumnLimit: 100       # 不强制换行
+NamespaceIndentation: All
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
+
