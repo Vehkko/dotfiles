@@ -1,0 +1,3 @@
+_load_nvm() {
+    source /usr/share/nvm/init-nvm.sh
+}

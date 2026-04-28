@@ -1,0 +1,6 @@
+export HOTSPOT_IFACE="wlan1"
+export HOTSPOT_CON="campus-hotspot"
+export HOTSPOT_SSID="vehkko"
+export HOTSPOT_PASS="12345687"
+export HOTSPOT_UPSTREAM="eduroam"
+export HOTSPOT_UPSTREAM_IFACE="wlan0"
