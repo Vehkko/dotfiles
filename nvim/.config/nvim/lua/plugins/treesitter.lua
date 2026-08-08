@@ -1,19 +1,61 @@
--- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- Customize Treesitter
+-- --------------------
+-- Treesitter customizations are handled with AstroCore
+-- as nvim-treesitter simply provides a download utility for parsers
 
 ---@type LazySpec
 return {
-  "nvim-treesitter/nvim-treesitter",
+  "AstroNvim/astrocore",
+  ---@type AstroCoreOpts
   opts = {
-    ensure_installed = {
-      "lua",
-      "vim",
-      "c",
-      "cpp",
-      "python",
+    treesitter = {
+      highlight = true,
+      indent = true,
+      auto_install = true,
 
-      -- add more arguments for adding more treesitter parsers
+      ensure_installed = {
+        -- Neovim / Lua
+        "lua",
+        "luap",
+        "vim",
+        "vimdoc",
+        "query",
+
+        -- C / C++ / CUDA / CMake
+        "c",
+        "cpp",
+        "cuda",
+        "cmake",
+
+        -- Python / scientific scripting
+        "python",
+
+        -- Shell
+        "bash",
+
+        -- Markdown / LaTeX
+        "markdown",
+        "markdown_inline",
+        "latex",
+
+        -- Config formats
+        "json",
+        "jsonc",
+        "yaml",
+        "toml",
+        "xml",
+
+        -- Other languages you use / have packs for
+        "rust",
+        "zig",
+        "julia",
+        "haskell",
+        "java",
+        "matlab",
+
+        -- Useful for Noice cmdline regex highlighting
+        "regex",
+      },
     },
   },
 }

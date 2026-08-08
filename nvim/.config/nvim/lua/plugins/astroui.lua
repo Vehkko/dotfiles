@@ -1,5 +1,3 @@
--- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroUI provides the basis for configuring the AstroNvim User Interface
 -- Configuration documentation can be found with `:h astroui`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -11,17 +9,26 @@ return {
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme
-    -- colorscheme = "tokyonight-night",
     colorscheme = "cyberdream",
-    -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
+
+    -- AstroUI allows you to easily modify highlight groups for any and all colorschemes
     highlights = {
-      init = { -- this table overrides highlights in all themes
+      init = {
+        -- 这里可以写所有主题通用的高亮覆盖
         -- Normal = { bg = "#000000" },
       },
-      astrodark = { -- a table of overrides/changes when applying the astrotheme theme
+
+      astrodark = {
+        -- 这里只对 astrotheme/astrodark 生效
+        -- Normal = { bg = "#000000" },
+      },
+
+      cyberdream = {
+        -- 如果以后想专门覆盖 cyberdream，可以写这里
         -- Normal = { bg = "#000000" },
       },
     },
+
     -- Icons can be configured throughout the interface
     icons = {
       -- configure the loading of the lsp in the status line

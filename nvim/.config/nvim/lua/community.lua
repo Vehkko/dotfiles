@@ -5,12 +5,16 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
+
+  -- Basic language/tools
   { import = "astrocommunity.pack.lua" },
-  -- import/override with your plugins folder
+
+  -- Colorschemes
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.colorscheme.tokyonight-nvim" },
   { import = "astrocommunity.colorscheme.cyberdream-nvim" },
 
+  -- Language packs
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.cmake" },
@@ -20,8 +24,11 @@ return {
   { import = "astrocommunity.pack.julia" },
   { import = "astrocommunity.pack.haskell" },
 
+  -- Markdown / LaTeX / typst / quarto
   { import = "astrocommunity.markdown-and-latex.vimtex" },
   { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
+  { import = "astrocommunity.pack.quarto" },
+  { import = "astrocommunity.pack.typst" },
 
   -- { import = "astrocommunity.completion.codeium-nvim" },
 }

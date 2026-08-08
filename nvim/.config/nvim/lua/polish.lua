@@ -1,51 +1,50 @@
--- if true then return end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
--- This will run last in the setup process and is a good place to configure
--- things like custom filetypes. This is just pure lua so anything that doesn't
+-- This will run last in the setup process.
+-- This is just pure lua so anything that doesn't
 -- fit in the normal config locations above can go here
 
--- Set up custom filetypes
-vim.filetype.add {
-  extension = {
-    foo = "fooscript",
-  },
-  filename = {
-    ["Foofile"] = "fooscript",
-  },
-  pattern = {
-    ["~/%.config/foo/.*"] = "fooscript",
-  },
-}
+-- 自定义 filetype：如果你不用 foo/fooscript，可以整段删掉
+-- vim.filetype.add {
+--   extension = {
+--     foo = "fooscript",
+--   },
+--   filename = {
+--     ["Foofile"] = "fooscript",
+--   },
+--   pattern = {
+--     ["~/%.config/foo/.*"] = "fooscript",
+--   },
+-- }
 
--- 这是自己添加的:
-
--- opacity
--- vim.g.neovide_transparency = 0.85
-vim.g.neovide_opacity = 0.8
+-- Neovide / GUI 透明度设置
+vim.g.neovide_opacity = 0.88
 vim.g.transparency = 0.8
-vim.g.neovide_background_color = ("#0f1117" .. string.format("%x", math.floor(((255 * vim.g.transparency) or 0.82))))
+vim.g.neovide_background_color = "#0f1117" .. string.format("%02x", math.floor(255 * vim.g.transparency))
 
+-- 允许项目级 .nvim.lua / .exrc，但开启 secure 限制危险操作
 vim.o.exrc = true
 vim.o.secure = true
 
-vim.opt.number = true -- 显示绝对行号
-vim.opt.relativenumber = true -- 显示相对行号
+-- 行号
+vim.opt.number = true
+vim.opt.relativenumber = true
 
-vim.opt.guifont = { "CaskaydiaCove Nerd Font Mono", ":h13" }
+-- GUI 字体；终端里不会生效
+-- vim.opt.guifont = { "CaskaydiaCove Nerd Font Mono", ":h13" }
+vim.opt.guifont = { "MesloLGS NF", ":h12" }
 
--- ecs 退出终端
-vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { noremap = true })
+-- Esc 退出终端模式
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
 
--- -- 让 Codeium 的虚拟文本更“灰”，尽量与主题兼容
+-- Ensure custom Treesitter parser install dir is in runtimepath
+local site_dir = vim.fn.stdpath "data" .. "/site"
+if not vim.tbl_contains(vim.opt.runtimepath:get(), site_dir) then vim.opt.runtimepath:append(site_dir) end
+
+-- Codeium 相关配置：如果以后重新启用 Codeium，可以打开
 -- vim.api.nvim_create_autocmd("ColorScheme", {
 --   callback = function()
---     -- 这几个名字在不同版本/主题下可能略有差异；至少 Comment 一定存在
 --     vim.api.nvim_set_hl(0, "CodeiumSuggestion", { link = "Comment" })
 --     vim.api.nvim_set_hl(0, "CodeiumSuggestionText", { link = "Comment" })
 --     vim.api.nvim_set_hl(0, "CodeiumSuggestionGhostText", { link = "Comment" })
 --   end,
 -- })
--- -- 立刻应用一次（不等你切换主题）
 -- vim.cmd "doautocmd ColorScheme"
-
--- 到这里为止
