@@ -1,2 +1,2 @@
 # dotfiles
-Vehkko's private dotfiles.
+Vehkko's dotfiles.
